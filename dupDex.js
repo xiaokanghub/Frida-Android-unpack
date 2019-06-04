@@ -4,13 +4,13 @@
 //Android P:
 //ARM32/64: _ZN3art13DexFileLoader10OpenCommonEPKhmS2_mRKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEjPKNS_10OatDexFileEbbPS9_NS3_10unique_ptrINS_16DexFileContainerENS3_14default_deleteISH_EEEEPNS0_12VerifyResultE
 //if u want to get own func name,u can use this script to get it!
-var moduleName;
+var moduleFuncName;
 var m =  Module.enumerateExportsSync('libart.so');
 m.forEach(function(m){
 	if(m.name.indexOf("OpenCommon") != -1){
 
-		moduleName = m.name;
-		console.log("module name: "+ m.name);
+		moduleFuncName = m.name;
+		console.log("module function name: "+ m.name);
 };
 
 });
@@ -18,7 +18,7 @@ m.forEach(function(m){
 var moduleO = "_ZN3art7DexFile10OpenCommonEPKhjRKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEjPKNS_10OatDexFileEbbPS9_PNS0_12VerifyResultE";
 var moduleP = "_ZN3art13DexFileLoader10OpenCommonEPKhmS2_mRKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEjPKNS_10OatDexFileEbbPS9_NS3_10unique_ptrINS_16DexFileContainerENS3_14default_deleteISH_EEEEPNS0_12VerifyResultE";
 
-if(moduleO == moduleName || moduleP == moduleName){
+if(moduleO == moduleFuncName || moduleP == moduleFuncName){
 	console.log("=========================================");
 	console.log("Hook Start");
 	var OpenCommon = Module.findExportByName("libart.so","_ZN3art7DexFile10OpenCommonEPKhjRKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEjPKNS_10OatDexFileEbbPS9_PNS0_12VerifyResultE");
