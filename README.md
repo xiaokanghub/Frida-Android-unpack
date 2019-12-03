@@ -5,6 +5,7 @@ u need a root mobile and installed Frida<br>
 ro.debuggable = true<br>
 ## How to use this script?
 frida -U -f com.xxx.xxx.xxx -l dupDex.js --no-pause<br>
+Please modify the "/data/data/com.jjwxc.reader/"
 ## Function
 ```
 art::DexFile::OpenCommon(unsigned char const*, unsigned long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned int, art::OatDexFile const*, bool, bool, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*, art::DexFile::VerifyResult*)
